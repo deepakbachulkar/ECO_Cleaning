@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context="com.ipws.eco.ui.activity.SplashActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp">
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_splash_app"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/txt1"
+            style="@style/styleTxtVeryBigWht"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/project_cleaning"
+            android:layout_below="@+id/img1"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/txt2"
+            style="@style/styleTxtNorWht"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_splash_cont"
+            android:layout_below="@+id/txt1"
+            android:gravity="center"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtBtnSkip"
+        style="@style/styleTxtNorWht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_skip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp" />
+</RelativeLayout>
+</FrameLayout>

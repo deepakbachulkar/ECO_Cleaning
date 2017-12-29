@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/txtTitle"
+    style="@style/styleTxtBigBck"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Today"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recylerExpand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:layout_weight="6"
+        android:paddingTop="2dp"
+        android:scrollbars="none">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

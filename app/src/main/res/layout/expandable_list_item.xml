@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+	<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:id="@+id/item">
+		<TextView
+			style="@style/styleInspText"
+			android:id="@+id/textSrNo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical"
+			android:layout_centerVertical="true"
+			android:padding="5dp"
+			android:text="1"/>
+		<TextView
+			style="@style/styleInspText"
+			android:id="@+id/textItem"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/textSrNo"
+			android:gravity="center_vertical"
+			android:layout_centerVertical="true"
+			android:padding="5dp"
+			android:text="Hello World"
+			/>
+		<Button
+			android:id="@+id/expandable_toggle_button"
+			android:background="@drawable/ic_arrow_drop_down_black"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_alignParentRight="true" />
+	</RelativeLayout>
+
+	<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:id="@+id/expandable">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="5dp"
+			android:orientation="horizontal">
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dp"
+				android:gravity="center">
+				<CheckBox
+					android:id="@+id/chkBox"
+					android:layout_width="40dp"
+					android:layout_height="40dp"
+					android:visibility="visible"/>
+				<ImageView
+					android:id="@+id/imgLeftArrow"
+					android:layout_marginTop="5dp"
+					android:layout_width="30dp"
+					android:layout_height="30dp"
+					android:src="@drawable/ic_arrow_right_drop_circle_grey"
+					android:textSize="16dp"/>
+			</RelativeLayout>
+			<TextView
+				android:id="@+id/textSubItem"
+				android:layout_width="wrap_content"
+				android:layout_height="30dp"
+				android:padding="5dp"
+				android:text="1. Sub Font Entrance And Foyer"
+				android:textColor="@color/black_100_percent"
+				android:textSize="16dp"/>
+
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

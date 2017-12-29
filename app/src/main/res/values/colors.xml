@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1673a1</color>
+    <color name="colorPrimaryDark">#1673a1</color>
+    <color name="colorAccent">#1673a1</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#64a6ec</color>
+    <color name="grey">#7e8181</color>
+    <color name="red">#ea181c</color>
+    <color name="green">#32ba7b</color>
+    <color name="pink">#FF308E</color>
+    <color name="orange">#FA9301</color>
+    <color name="yellow">#F8D411</color>
+    <color name="purple">#6F26FA</color>
+
+    <color name="grey_dark">#515151</color>
+
+    <color name="black">#222222</color>
+    <color name="day_disabled_background_color">#F1F5F8</color>
+    <color name="day_disabled_text_color">#DEDEDE</color>
+    <color name="selected_day_background">#03A7E9</color>
+    <color name="current_day_of_month">#03A7E9</color>
+    <color name="off_white">#f1f5f7</color>
+    <color name="blue_selector">#00aeea</color>
+    <color name="red_negative_progress">#ff3333</color>
+
+    <color name="bg_color">#e3ebee</color>
+    <color name="color_grey">#2a2d30</color>
+    <color name="grey_light">#d1d4d7</color>
+    <color name="grey_light_20op">#e2e5e7</color>
+
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_80">#80000000</color>
+    <color name="black_100_percent">#000000</color>
+    <color name="black_87_percent">#212121</color>
+    <color name="black_54_percent">#757575</color>
+    <color name="black_38_percent">#9E9E9E</color>
+    <color name="black_color_87op">#DE000000</color>
+    <color name="black_color_54op">#8A000000</color>
+    <color name="black_color_38op">#61000000</color>
+    <color name="black_color_24op">#3d000000</color>
+    <color name="black_color_20op">#33000000</color>
+    <color name="white_two_color">#f3f3f3</color>
+    <color name="black_f2f2f2">#f2f2f2</color>
+    <color name="white_three_color">#e8e8e8</color>
+    <color name="black_20_percent">#cccccc</color>
+
+    <!-- App Colors-->
+
+    <color name="col_app1">#42cfba</color>
+    <color name="col_app2">#2b3093</color>
+    <color name="bg_app_col">#f6f8fa</color>
+
+    <color name="btn_bg2">#1673a1</color>
+
+    <color name="thame_hite_col">#1673a1</color>
+    <color name="col_menu">#181b56</color>
+    <color name="col_icon_menu">#1673a1</color>
+
+
+
+    <color name="thame_color">#273b45</color>
+    <color name="col_schedule_today">#303589</color>
+
+    <color name="header_color">#d9deda</color>
+
+    <color name="col_clock_in">#4c90ef</color>
+    <color name="col_clock_out">#2b3093</color>
+
+    <color name="bg_app_grey">#e8e9e9</color>
+
+    <color name="theme_color_primary">#1673a1</color>
+    <color name="theme_color_primary_dark">#0e4e6e</color>
+    <color name="theme_color_text_primary">#0e4e6e</color>
+    <color name="theme_color_window_background">#cccccc</color>
+</resources>

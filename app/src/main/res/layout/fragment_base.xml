@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_imgpsh_fullsize">
+
+        <RelativeLayout
+            android:id="@+id/relBaseFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal|center_vertical">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relBaseFragmentProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@color/transparent_80"
+            android:gravity="center_horizontal|center_vertical"
+            >
+                <ProgressBar
+                    style="?android:attr/progressBarStyleLargeInverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:indeterminate="true"
+                    android:indeterminateTintMode="src_atop"
+                    android:indeterminateTint="@color/thame_color"
+                    android:visibility="visible" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linBaseErrorState"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_horizontal"
+                    android:textSize="14sp"
+                    android:textColor="@color/black_38_percent"
+                    android:fontFamily="sans-serif"
+                    android:id="@+id/lnr_base_error_message"
+                    android:text="Some \n unexpected error occured !"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtBottom"
+            style="@style/styleTxtNorWht"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/msg_copyright"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            />
+</FrameLayout>

@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+        <TextView
+            android:id="@+id/txtDate"
+            style="@style/styleTxtNorBck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtTime"
+            android:gravity="center"
+            android:text="Tuesday, 03 Oct 2017"/>
+        <TextView
+            android:id="@+id/txtTime"
+            style="@style/styleTxtDateBck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtBtnClickIn"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:elevation="5dp"/>
+        <TextView
+            android:id="@+id/txtBtnClickIn"
+            style="@style/styleTxtBigWht"
+            android:textStyle="bold"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:gravity="center"
+            android:text="@string/action_click"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_shape_circle" />
+        <TextView
+            android:id="@+id/txtLastCheckIn"
+            style="@style/styleTxtSmallGrey"
+            android:textColor="@color/col_app2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/txtBtnClickIn"
+            android:gravity="center"
+            android:visibility="visible"
+            android:text=""/>
+
+    <TextView
+        android:id="@+id/txtBtnViewMyAttendance"
+        style="@style/styleTxtBigWht"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_grdinate"
+        android:padding="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:visibility="visible"
+        android:textAllCaps="true"
+        android:text="@string/action_view_my_attendance"/>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <RelativeLayout
+        android:id="@+id/relTick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/txtMsg">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_imgpsh_fullsize"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_success"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtMsg"
+        style="@style/styleTxtNorBck"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="@string/msg_success">
+
+    </TextView>
+    <TextView
+        android:id="@+id/txtSuccess"
+        style="@style/styleTxtVeryBigBck"
+        android:textStyle="bold"
+        android:background="@drawable/shape_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relTick"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:text="@string/success"
+        android:layout_marginTop="-20dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,326 @@
+<resources>
+
+<!-- ===================    App Theme ========================== -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- inherit from the material theme -->
+    <style name="EcoAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Main theme colors -->
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">@color/theme_color_primary</item>
+        <item name="colorPrimaryDark">@color/theme_color_primary_dark</item>
+        <item name="colorAccent">@color/theme_color_text_primary</item>
+    </style>
+
+    <!-- ===================    End App Theme ========================== -->
+
+    <style name="nav_menu_item">
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="nav_menu_icon">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textColor">@color/col_app1</item>
+    </style>
+
+    <style name="style_icon_header">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="style_btn_unterline">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="style_edt_title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    
+    <!-- Project Screen Style -->
+    <style name="styleTxtWhtLgn">
+        <item name="android:textSize">35sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <!-- White Style-->
+    <style name="styleTxtVerySmlWht">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="styleTxtSmlWht">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="styleTxtNorWht">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="styleTxtBigWht">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="styleTxtVeryBigWht">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+    <!-- Black Style-->
+    <style name="styleTxtVerySmlBck">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+    </style>
+
+    <style name="styleTxtSmlBck">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+    </style>
+
+    <style name="styleTxtNorBck">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+
+    </style>
+
+    <style name="styleTxtBigBck">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+
+    </style>
+
+    <style name="styleTxtVeryBigBck">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+    </style>
+
+
+    <style name="styleTxtDateBck">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+    </style>
+
+    <!-- Thame Style-->
+    <style name="styleTxtVerySmlThame">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/thame_color</item>
+
+    </style>
+
+    <style name="styleTxtSmlThame">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/thame_color</item>
+
+    </style>
+
+    <style name="styleTxtNorThame">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/thame_color</item>
+
+    </style>
+
+    <style name="styleTxtBigThame">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/thame_color</item>
+
+    </style>
+
+    <style name="styleTxtVeryBigThame">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/thame_color</item>
+    </style>
+
+<!-- New Style -->
+    <style name="styleBtn1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/bg_btn_grdinate</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="styleBtn2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/bg_btn_2</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="styleTxtTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="styleTxtTitleValue">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="styleTxtReqStock">
+        <item name="android:textSize">16sp</item>
+       <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/col_app2</item>
+    </style>
+
+    <style name="styleDashBTxtHrs">
+        <item name="android:textSize">45sp</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+    <style name="style_title_header">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Calender Style -->
+    <style name="AppEditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="styleTxtSmallBlack">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/black_100_percent</item>
+    </style>
+    <style name="styleTxtSmallGrey">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/grey_dark</item>
+    </style>
+
+    <style name="styleEdtTxt_1" parent="Theme.App.Base">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:lines">1</item>
+        <item name="android:cacheColorHint">@color/yellow</item>
+        <item name="android:colorBackgroundCacheHint">@color/red</item>
+        <item name="android:completionHintView">@color/green</item>
+    </style>
+    <style name="Theme.App.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlActivated">@color/yellow</item>
+        <item name="colorControlHighlight">@color/red</item>
+    </style>
+
+
+    <style name="style_calender_title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="CalendarView" />
+
+    <style name="CalendarView.MonthTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalendarView.DayOfTheWeek">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CalendarView.DayOfTheMonth">
+        <item name="android:textSize">20sp</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+
+    <style name="styleBtn">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="styleInspText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="styleInspText_2">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

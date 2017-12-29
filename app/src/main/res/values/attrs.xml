@@ -1,0 +1,88 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrimInsetsView">
+        <attr name="appInsetForeground" format="reference|color" />
+    </declare-styleable>
+
+    <declare-styleable name="icon">
+        <attr name="icon_name" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ziffiSpinner">
+        <attr name="android:hint" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomCalendarView">
+        <attr name="calendarTitleTextColor" format="color" />
+        <attr name="dayOfWeekTextColor" format="color" />
+        <attr name="dayOfMonthTextColor" format="color" />
+        <attr name="calendarBackgroundColor" format="color" />
+        <attr name="disabledDayBackgroundColor" format="color" />
+        <attr name="disabledDayTextColor" format="color" />
+        <attr name="selectedDayBackgroundColor" format="color" />
+        <attr name="selectedDayTextColor" format="color" />
+        <attr name="weekLayoutBackgroundColor" format="color" />
+        <attr name="titleLayoutBackgroundColor" format="color" />
+        <attr name="currentDayOfMonthColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="expandableLayout">
+        <attr name="ael_duration" format="integer" />
+        <attr name="ael_expanded" format="boolean" />
+        <attr name="ael_defaultChildIndex" format="integer" />
+        <attr name="ael_defaultPosition" format="dimension" />
+        <attr name="ael_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="ael_interpolator" format="enum">
+            <enum name="accelerateDecelerate" value="0" />
+            <enum name="accelerate" value="1" />
+            <enum name="anticipate" value="2" />
+            <enum name="anticipateOvershoot" value="3" />
+            <enum name="bounce" value="4" />
+            <enum name="decelerate" value="5" />
+            <enum name="fastOutLinearIn" value="6" />
+            <enum name="fastOutSlowIn" value="7" />
+            <enum name="linear" value="8" />
+            <enum name="linearOutSlowIn" value="9" />
+            <enum name="overshoot" value="10" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ExpandingItem">
+        <attr name="item_layout" format="reference"/>
+        <attr name="sub_item_layout" format="reference"/>
+        <attr name="separator_layout" format="reference"/>
+        <attr name="indicator_size" format="dimension"/>
+        <attr name="indicator_margin_left" format="dimension"/>
+        <attr name="indicator_margin_right" format="dimension"/>
+        <attr name="show_indicator" format="boolean"/>
+        <attr name="show_animation" format="boolean"/>
+        <attr name="start_collapsed" format="boolean"/>
+        <attr name="animation_duration" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomFont">
+        <attr name="fontFamily" format="string" />
+    </declare-styleable>
+    <declare-styleable name="SlideExpandableListView">
+        <attr name="mode">
+            <flag name="single" value="0" />
+            <flag name="multiple" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
+
+

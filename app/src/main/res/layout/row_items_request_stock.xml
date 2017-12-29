@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+    android:padding="5dp">
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="70">
+        <Spinner
+            style="@style/styleEdtTxt_1"
+            android:id="@+id/spinnerReqCC"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spinner_hgt"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_shape_edt"
+            android:hint="ABC Pvt. Ltd"
+            android:text=""/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_drop_down_black"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <!-- <EditText
+         android:id="@+id/txtTitle"
+         style="@style/styleTxtTitle"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="70"
+         android:background="@drawable/bg_shape_edt"
+         android:padding="5dp"
+         android:enabled="false"
+         android:layout_gravity="center"
+         android:text="Toilet Paper"/>-->
+        <EditText
+            android:id="@+id/edtItems"
+            style="@style/styleTxtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:background="@drawable/bg_shape_edt"
+            android:padding="5dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:hint="0"
+            android:text=""/>
+        <TextView
+            android:id="@+id/txtRemove"
+            style="@style/styleTxtVeryBigBck"
+            android:textSize="20sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:layout_marginLeft="10dp"
+            android:padding="1dp"
+            android:textColor="@color/red"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/fa_icon_minus" />
+    </LinearLayout>

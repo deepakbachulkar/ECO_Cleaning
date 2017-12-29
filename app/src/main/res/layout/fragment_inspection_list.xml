@@ -1,0 +1,146 @@
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relTimePicker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app_col">
+        <LinearLayout
+            android:id="@+id/linSubLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/txtBtEdit"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                style="@style/styleTxtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/account"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Spinner
+                style="@style/styleEdtTxt_1"
+                android:id="@+id/spinnerAccount"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_shape_edt"
+                android:hint="ABC Pvt. Ltd"
+                android:text=""/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_drop_down_black"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+            </RelativeLayout>
+            <TextView
+                style="@style/styleTxtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/location"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Spinner
+                style="@style/styleEdtTxt_1"
+                android:id="@+id/spinnerLocation"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+
+                android:background="@drawable/bg_shape_edt"
+                android:hint="Melbourne Center"
+                android:text=""/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_drop_down_black"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <com.ipws.eco.expand_list.ActionSlideExpandableListView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/expandListItems"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"/>
+         </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtBtEdit"
+        style="@style/styleBtn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin = "20dp"
+        android:padding="10dp"
+        android:text="@string/action_edit"
+        android:layout_alignParentBottom="true"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relEdit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/white">
+        <com.ipws.eco.expand_list.ActionSlideExpandableListView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/expandListItemsEdit"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/lin_1" />
+
+        <LinearLayout
+            android:id="@+id/lin_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp">
+            <EditText
+                android:id="@+id/edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_shape_edt"
+                android:layout_margin="20dp"
+                android:lines="4"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2" >
+                <TextView
+                    style="@style/styleBtn2"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Upload Image"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    style="@style/styleBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TakePhoto"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txtBtSubmit"
+                style="@style/styleBtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/action_submit"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
