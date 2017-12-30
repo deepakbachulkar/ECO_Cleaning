@@ -347,8 +347,9 @@ public class NavigationDrawerFragment extends BaseFragment implements View.OnCli
                 AppDates.with().currentDateTime("hh:mm") +" on "+AppDates.with().currentDateTime("dd MMMM yyyy")+".");
         AppPreference.getInstance(getActivity()).setUserId("");
         AppPreference.getInstance(getActivity()).setLogin("");
-        getActivity().finish();
+
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
+        getActivity().finish();
     }
 }

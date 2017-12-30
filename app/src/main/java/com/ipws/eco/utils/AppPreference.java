@@ -17,6 +17,7 @@ public class AppPreference {
     private String PREFS_NAME = "eco";
     private String LOGIN = "login";
     private String LOGIN_NAME = "login_name";
+    private String LOGIN_PASSWORD = "password";
     private String USER_ID = "user_id";
     private String LAST_LOGOUT = "last_logout";
     private String CLOCK_IN_OUT = "clock_in_out";
@@ -101,6 +102,9 @@ public class AppPreference {
         preferences.edit().putString(LOGIN_NAME, data).commit();
     }
 
+
+
+
     public String getLoginName(){
         String str="";
         if(preferences.getString(LOGIN_NAME,"")!=null)
@@ -108,11 +112,20 @@ public class AppPreference {
         return str;
     }
 
+    public void setPassword(String data){
+        preferences.edit().putString(LOGIN_PASSWORD, data).commit();
+    }
+
+    public String getPassword(){
+        String str="";
+        if(preferences.getString(LOGIN_PASSWORD,"")!=null)
+            str = preferences.getString(LOGIN_PASSWORD,"");
+        return str;
+    }
 
     public void setUserId(String data){
         preferences.edit().putString(USER_ID, data).commit();
     }
-
 
     public void setLastLogout(String data){
         preferences.edit().putString(LAST_LOGOUT, data).commit();

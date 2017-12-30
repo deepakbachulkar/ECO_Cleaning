@@ -228,7 +228,6 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-
     private void toNext(Class classs, boolean isFinish){
         Intent intent = new Intent(getActivity(), classs);
         startActivity(intent);
@@ -261,6 +260,8 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener
                     AppPreference.getInstance(getActivity()).setUserId(object1.getString("id"));
                     AppPreference.getInstance(getActivity()).setLogin(msg);
                     AppPreference.getInstance(getActivity()).setLoginName(mEmailView.getText().toString().trim());
+                    Logs.d("Password" + mPasswordView.getText().toString().trim());
+                    AppPreference.getInstance(getActivity()).setPassword(mPasswordView.getText().toString().trim());
                     if(getActivity()!=null)
                         Toast.makeText(getActivity(), "You're logged in as "+object1.getString("user_name"), Toast.LENGTH_SHORT).show();
                         AppPreference.getInstance(getActivity()).setDashBroadHours(object.getJSONArray("Individual").toString());
@@ -297,6 +298,27 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
+    Response.Listener success= new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            Logs.d("Network response :"+ response);
+            hideProgressBar();
+            parse(response);
+        }
+    };
+
+    Response.ErrorListener error = new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Logs.d("Network error :"+ error.getMessage());
+            hideProgressBar();
+            error.printStackTrace();
+            if(getActivity()!=null)
+                Toast.makeText(getActivity(), "Unable to connect server.", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+
     private  String encrypt(String data, String password) throws  Exception
     {
         SecretKeySpec key = genrate(password);
@@ -316,25 +338,5 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener
         return secretKeySpec;
     }
 
-
-    Response.Listener success= new Response.Listener<String>() {
-        @Override
-        public void onResponse(String response) {
-            Log.d(TAG, response.toString());
-            hideProgressBar();
-            parse(response);
-        }
-    };
-
-    Response.ErrorListener error = new Response.ErrorListener() {
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            hideProgressBar();
-            VolleyLog.d(TAG, "Error: " + error.getMessage());
-            error.printStackTrace();
-            if(getActivity()!=null)
-                Toast.makeText(getActivity(), "Unable to connect server.", Toast.LENGTH_SHORT).show();
-        }
-    };
 
 }

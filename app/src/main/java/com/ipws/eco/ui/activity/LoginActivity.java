@@ -27,7 +27,7 @@ public class LoginActivity extends BaseActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment, tag).commit();
         checkPermissionsLocation();
     }
-
+  
 
 }
 

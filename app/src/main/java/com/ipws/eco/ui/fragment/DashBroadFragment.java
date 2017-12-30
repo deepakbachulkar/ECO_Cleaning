@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +15,20 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.ipws.eco.R;
 import com.ipws.eco.expandview.ExpandingList;
 import com.ipws.eco.model.StaffScheduleDetail;
 import com.ipws.eco.network.NetworkDAO;
 import com.ipws.eco.ui.activity.BaseActivity;
+import com.ipws.eco.ui.activity.HomeActivity;
 import com.ipws.eco.ui.examplerecyclerview.StaffDetailRecyclerViewAdapter;
 import com.ipws.eco.utils.AppDates;
 import com.ipws.eco.utils.AppPreference;
 import com.ipws.eco.utils.Logs;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -78,14 +82,14 @@ public class DashBroadFragment extends BaseFragment implements View.OnClickListe
         ((TextView) view.findViewById(R.id.txtWelcome)).setText("Welcome "+AppPreference.getInstance(getActivity()).getUserName()+",");
         txtIconMenu.setOnClickListener(this);
     }
-
+//------- Init Font
     private  void setFont(){
         txtIconMenu.setTypeface(((BaseActivity)getActivity()).getTypefaceFontAwesome());
         txtImgDate2.setTypeface(((BaseActivity)getActivity()).getTypefaceFontAwesome());
         txtImgDate.setTypeface(((BaseActivity)getActivity()).getTypefaceFontAwesome());
         txtFaIconClock.setTypeface(((BaseActivity)getActivity()).getTypefaceFontAwesome());
     }
-
+//--- Initialize the data of screen.
     private void initValue(View v)
     {
         if(AppPreference.getInstance(getActivity()).getDashBroadData().equals(""))
@@ -94,7 +98,7 @@ public class DashBroadFragment extends BaseFragment implements View.OnClickListe
             txtTodayMsg.setText("Your roster is not available.");
         }else{
 
-            parse(AppPreference.getInstance(getActivity()).getDashBroadData());
+            parseDashBroad(AppPreference.getInstance(getActivity()).getDashBroadData());
             v.findViewById(R.id.relCardView).setVisibility(View.VISIBLE);
         }
         ((TextView) v.findViewById(R.id.txtWeekly)).setText(AppPreference.getInstance(getActivity()).getDashBroadHoursWeekly());
@@ -147,45 +151,46 @@ public class DashBroadFragment extends BaseFragment implements View.OnClickListe
 
 
 
-    private void parse(String data)
+
+    private void parseDashBroad(String data)
     {
 
         try
         {
-                List<StaffScheduleDetail> list = new ArrayList<>();
-                JSONArray array = new JSONArray(data);
-                for (int i = 0; i < array.length(); i++)
-                {
-                    StaffScheduleDetail detail = new StaffScheduleDetail();
-                    JSONObject jsonObject = array.getJSONObject(i);
-                    detail.setLocation(getStringFromJson(jsonObject, "Location"));
-                    detail.setShiftTime(getStringFromJson(jsonObject, "Shift_Time"));
-                    detail.setChechInTime(getStringFromJson(jsonObject, "Check_In_Time"));
-                    detail.setCheckOutTime(getStringFromJson(jsonObject, "Check_Out_Time"));
-                    detail.setStaffId(getStringFromJson(jsonObject, "Staff_id"));
-                    detail.setAddress(getStringFromJson(jsonObject, "AddressDetails"));
-                    detail.setForDate(getStringFromJson(jsonObject, "ForDate"));
+            List<StaffScheduleDetail> list = new ArrayList<>();
+            JSONArray array = new JSONArray(data);
+            for (int i = 0; i < array.length(); i++)
+            {
+                StaffScheduleDetail detail = new StaffScheduleDetail();
+                JSONObject jsonObject = array.getJSONObject(i);
+                detail.setLocation(getStringFromJson(jsonObject, "Location"));
+                detail.setShiftTime(getStringFromJson(jsonObject, "Shift_Time"));
+                detail.setChechInTime(getStringFromJson(jsonObject, "Check_In_Time"));
+                detail.setCheckOutTime(getStringFromJson(jsonObject, "Check_Out_Time"));
+                detail.setStaffId(getStringFromJson(jsonObject, "Staff_id"));
+                detail.setAddress(getStringFromJson(jsonObject, "AddressDetails"));
+                detail.setForDate(getStringFromJson(jsonObject, "ForDate"));
 //                    detail.setLocation(getStringFromJson(jsonObject, "sessionkey"));
 //                    if(i==1)
-                     list.add(detail);
-                }
-                if(list.size()==2){
-                    setTomorrow(list.get(1));
-                    setToday(list.get(0));
-                }else if(list.size()==1){
-                    {
-                        mView.findViewById(R.id.txtTomm).setVisibility(View.GONE);
-                        mView.findViewById(R.id.linScheduleTomm).setVisibility(View.GONE);
-                        setToday(list.get(0));
-                    }
-                }else{
+                list.add(detail);
+            }
+            if(list.size()==2){
+                setTomorrow(list.get(1));
+                setToday(list.get(0));
+            }else if(list.size()==1){
+                {
                     mView.findViewById(R.id.txtTomm).setVisibility(View.GONE);
                     mView.findViewById(R.id.linScheduleTomm).setVisibility(View.GONE);
-                    mView.findViewById(R.id.txtTodayMsg).setVisibility(View.VISIBLE);
-                    txtTodayMsg.setText("Your roster is not available.");
-                    mView.findViewById(R.id.linSchedule).setVisibility(View.GONE);
-
+                    setToday(list.get(0));
                 }
+            }else{
+                mView.findViewById(R.id.txtTomm).setVisibility(View.GONE);
+                mView.findViewById(R.id.linScheduleTomm).setVisibility(View.GONE);
+                mView.findViewById(R.id.txtTodayMsg).setVisibility(View.VISIBLE);
+                txtTodayMsg.setText("Your roster is not available.");
+                mView.findViewById(R.id.linSchedule).setVisibility(View.GONE);
+
+            }
         }catch (Exception e){
             e.printStackTrace();
             showRetry(View.GONE);
@@ -215,6 +220,7 @@ public class DashBroadFragment extends BaseFragment implements View.OnClickListe
         ((TextView)mView.findViewById(R.id.txtAddress4)).setText(detail.getAddress());
     }
 
+
     private void showRetry(int isVib)
     {
         if(getView()!=null) {
@@ -230,5 +236,86 @@ public class DashBroadFragment extends BaseFragment implements View.OnClickListe
         }
         return "";
     }
+
+    //============= Login Request =============
+    private void requestLogin(String username, String password)
+    {
+        //9595036832 : Ipws@123
+
+        String parameter = "TxnType=PLOGIN&LOGINNAME1="+username+"&Msg=MACHINEIP:10.10.10.10|TDTSM:2017-08-19%2019*02*10.093|GUID:7987989-98789-98798|LOGINNAME2:"+username+"|PASS:"+password;
+        Logs.d("Parameter: "+parameter);
+        NetworkDAO.getInstance(getActivity()).login(getActivity(), parameter, success, error);
+    }
+
+    private void parse(String data)
+    {
+        try
+        {
+            if(data.contains("\"status\":\"00\""))
+            {
+                Log.d("eco", "Resp: " + data);
+                JSONObject object = new JSONObject(data);
+                if (object.has("status") && object.getString("status").equals("00"))
+                {
+                    String msg = object.getString("Msg");
+                    JSONArray jMsg = new JSONArray(msg);
+                    JSONObject object1 = jMsg.getJSONObject(0);
+
+                    if(object.has("Individual"))
+                        AppPreference.getInstance(getActivity()).setDashBroadHours(object.getJSONArray("Individual").toString());
+
+                    if(object.has("Schedule"))
+                    {
+                        try {
+                            JSONArray scheduleJA = object.getJSONArray("Schedule");
+                            Log.d("Data","Schedule: "+scheduleJA.toString());
+                            {
+                                AppPreference.getInstance(getActivity()).setDashBroadData(object.getJSONArray("Schedule").toString());
+                            }
+                            initValue(mView);
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+
+                }
+            }else
+            {
+                JSONObject object = new JSONObject(data)    ;
+                if(object.has("errormsg")) {
+//                    JSONObject object1 = object.getJSONObject("errormsg");
+//                    if(getActivity()!=null)
+//                        Toast.makeText(getActivity(), object1.getString("error"), Toast.LENGTH_SHORT).show();
+                }
+//                else
+//                    if(getActivity()!=null)
+//                    Toast.makeText(getActivity(), "Invalid User.", Toast.LENGTH_SHORT).show();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+//            if(getActivity()!=null)
+//                Toast.makeText(getActivity(), "User not registered.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    Response.Listener success= new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            Logs.d("Network response :"+ response);
+            hideProgressBar();
+            parse(response);
+        }
+    };
+
+    Response.ErrorListener error = new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Logs.d("Network error :"+ error.getMessage());
+            hideProgressBar();
+            error.printStackTrace();
+            if(getActivity()!=null)
+                Toast.makeText(getActivity(), "Unable to connect server.", Toast.LENGTH_SHORT).show();
+        }
+    };
 
 }
